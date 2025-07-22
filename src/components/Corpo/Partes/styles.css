@@ -1,0 +1,27 @@
+.sc-body-model-svg {
+  width: 100%;
+  height: 100%;
+}
+
+.itemSvg {
+  fill: rgba(0, 0, 0, 0); /* invisível inicialmente */
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  transition: fill 0.2s ease;
+}
+
+.itemSvg:hover {
+  fill: rgba(255, 99, 71, 0.4); /* Tomato, hover mais suave */
+}
+
+.selected {
+  fill: #ff6347; /* Tomato, bom contraste e visibilidade */
+}
+
+.itemSvgStroke {
+  fill: #2c3e50; /* Azul escuro elegante */
+  pointer-events: none;
+}
