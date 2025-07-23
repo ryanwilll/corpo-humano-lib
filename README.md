@@ -1,5 +1,7 @@
 # 🧍‍♂️ Corpo Humano Interativo
 
+![Corpo Humano Interativo](https://github.com/seu-usuario/seu-repo/raw/main/preview.png)
+
 Componente React para seleção visual e interativa de múltiplas partes do corpo humano (frente e costas), ideal para aplicações em saúde, como fichas de atendimento, marcação de lesões ou curativos.
 
 ---
