@@ -2,6 +2,7 @@ import { defineConfig } from 'tsup';
 
 export default defineConfig({
   entry: ['src/components/Corpo/index.ts'],
+  publicDir: 'src/components/Corpo/Partes',
   format: ['esm', 'cjs'],
   dts: true,
   sourcemap: true,
