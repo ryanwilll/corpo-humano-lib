@@ -1,10 +1,11 @@
-.sc-body-model-svg {
+.corpoHumanoSvgModel {
   width: 100%;
   height: 100%;
 }
 
+/* Cada parte selecionável */
 .itemSvg {
-  fill: rgba(0, 0, 0, 0); /* invisível inicialmente */
+  fill: rgba(0, 0, 0, 0);
   cursor: pointer;
   -webkit-user-select: none;
   -moz-user-select: none;
@@ -13,15 +14,18 @@
   transition: fill 0.2s ease;
 }
 
+/* Cada parte selecionável quando tiver hover */
 .itemSvg:hover {
-  fill: rgba(255, 99, 71, 0.4); /* Tomato, hover mais suave */
+  fill: rgba(255, 99, 71, 0.4);
 }
 
-.selected {
-  fill: #ff6347; /* Tomato, bom contraste e visibilidade */
+/* Quando o item estiver selecionado */
+.itemSvg.selecionado {
+  fill: #ff6347;
 }
 
+/* Linhas dos itens (Utlilzado na silhueta) */
 .itemSvgStroke {
-  fill: #2c3e50; /* Azul escuro elegante */
+  fill: #2c3e50;
   pointer-events: none;
 }

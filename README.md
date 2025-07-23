@@ -1,17 +1,30 @@
 # 🧍‍♂️ Corpo Humano Interativo
 
-Este projeto fornece um **componente visual interativo** para seleção de múltiplas partes do corpo humano (frente e costas), desenvolvido em React com TypeScript. Ele é usado principalmente em **sistemas de saúde**, como em fichas de atendimento, registros de curativo ou marcação de regiões afetadas.
+Componente React para seleção visual e interativa de múltiplas partes do corpo humano (frente e costas), ideal para aplicações em saúde, como fichas de atendimento, marcação de lesões ou curativos.
 
 ---
 
-## 🚀 Funcionalidade Principal
+## 🚀 Funcionalidades
 
-O sistema permite:
+- Seleção de múltiplas regiões do corpo (frente e costas)
+- Destaque visual das partes selecionadas
+- Controle programático da seleção via props e eventos
+- Modo somente visualização (sem interação)
+- Fácil integração e personalização via CSS
 
-✅ Selecionar múltiplas partes do corpo humano (frontal e traseira)  
-✅ Visualizar dinamicamente as partes selecionadas com destaque visual  
-✅ Controlar programaticamente a seleção via props e eventos  
-✅ Interface amigável para profissionais da saúde e atendentes
+---
+
+## 📦 Instalação
+
+```bash
+npm install corpo-humano
+```
+
+Ou, para uso local:
+
+```bash
+npm install ../caminho/para/lib
+```
 
 ---
 
@@ -20,11 +33,11 @@ O sistema permite:
 ```
 components/
 └── Corpo/
-    ├── CorpoHumano.tsx            # Componente principal que orquestra tudo
+    ├── CorpoHumano.tsx            # Componente principal
     ├── Partes/
-    │   ├── CorpoHumanoFrente.tsx  # SVG da frente com áreas clicáveis
-    │   ├── CorpoHumanoCostas.tsx  # SVG das costas com áreas clicáveis
-    │   └── styles.css             # Estilos para destacar partes selecionadas
+    │   ├── CorpoHumanoFrente.tsx  # SVG frente
+    │   ├── CorpoHumanoCostas.tsx  # SVG costas
+    │   └── styles.css             # Estilos das partes
 ```
 
 ---
@@ -32,57 +45,77 @@ components/
 ## ✨ Exemplo de Uso
 
 ```tsx
-import { CorpoHumano } from 'corpo-humano';
+import { useState } from 'react';
+import CorpoHumano, { TPartesSelecionadasFrente, TPartesSelecionadasCostas } from 'corpo-humano';
 
-function Exemplo() {
-  const [partesSelecionadas, setPartesSelecionadas] = useState<string[]>([]);
+const App = () => {
+  const [partesSelecionadasFrente, setPartesSelecionadasFrente] = useState<TPartesSelecionadasFrente>();
+  const [partesSelecionadasCostas, setPartesSelecionadasCostas] = useState<TPartesSelecionadasCostas>();
 
-  const handleSelecao = (parte: string) => {
-    setPartesSelecionadas((prev) => (prev.includes(parte) ? prev.filter((p) => p !== parte) : [...prev, parte]));
-  };
-
-  return <CorpoHumano partesSelecionadas={partesSelecionadas} aoSelecionarParte={handleSelecao} />;
-}
+  return (
+    <CorpoHumano
+      parte='ambos' // "frente", "costas" ou "ambos"
+      partesSelecionadasFrente={partesSelecionadasFrente}
+      setPartesSelecionadasFrente={setPartesSelecionadasFrente}
+      partesSelecionadasCostas={partesSelecionadasCostas}
+      setPartesSelecionadasCostas={setPartesSelecionadasCostas}
+      somenteVisualizar={false} // true ou false, para deixar marcar/desmarcar os itens
+    />
+  );
+};
 ```
 
 ---
 
-## 🎯 Exemplo de Partes Interativas
+## 🏷️ Tipos das Partes
 
-As partes do corpo são representadas com `path`s SVG identificados por ID:
-
-```tsx
-<path id="braco-esquerdo" onClick={handleClick} />
-<path id="peito" onClick={handleClick} />
-<path id="perna-direita" onClick={handleClick} />
-...
-```
-
-Cada parte pode ser **clicada** para ser selecionada ou desmarcada. Um estilo `selected` é aplicado dinamicamente para destacar a parte ativa.
+- **TPartesSelecionadasFrente** e **TPartesSelecionadasCostas** são objetos onde cada chave é uma parte do corpo e o valor indica se está selecionada/habilitada:
+  ```ts
+  {
+    cabeca: { selecionado: true, habilitado: true },
+    abdomen: { selecionado: false, habilitado: true },
+    // ...
+  }
+  ```
 
 ---
 
-## 📦 Instalação como Lib (se publicado)
+## 🎯 Partes Selecionáveis
 
-```bash
-npm install corpo-humano
-```
+Cada parte é um `<path id="parte-do-corpo" />` no SVG. IDs disponíveis incluem (exemplo):
 
-Ou, se estiver usando localmente:
+**Frente:**  
+`cabeca`, `olhos`, `orelhas`, `nariz`, `boca`, `pescoco`, `peito`, `ombroEsquerdo`, `ombroDireito`, `abdomen`, `antebracoDireito`, `antebracoEsquerdo`, `abdomenMedio`, `abdomenBaixo`, `maoDireita`, `maoEsquerda`, `orgaoReprodutor`, `coxaDireita`, `coxaEsquerda`, `joelhoDireito`, `joelhoEsquerdo`, `panturrilhaDireita`, `panturrilhaEsquerda`, `peDireito`, `peEsquerdo`
 
-```bash
-npm install ../caminho/para/lib
-```
+**Costas:**  
+`cabeca`, `ouvidos`, `orelhas`, `pescoco`, `nuca`, `costas`, `ombroEsquerdo`, `ombroDireito`, `cutuveloEsquerdo`, `cutuveloDireito`, `costasInferior`, `antebracoEsquerdo`, `antebracoDireito`, `nadegas`, `anus`, `maoEsquerda`, `maoDireita`, `coxaEsquerda`, `coxaDireita`, `pernaEsquerda`, `pernaDireita`, `peEsquerdo`, `peDireito`
 
-## ⚙️ Personalização
+---
 
-Você pode estilizar as partes selecionadas alterando o CSS:
+## ⚙️ Personalização de Estilo
+
+Crie um arquivo styles.css para alterar cores, hover e seleção:
 
 ```css
-path.selected {
-  fill: #6fcf97;
-  stroke: #333;
-  stroke-width: 1.5;
+.corpoHumanoSvgModel {
+  width: 100%;
+  height: 100%;
+}
+.itemSvg {
+  fill: rgba(0, 0, 0, 0);
+  cursor: pointer;
+  user-select: none;
+  transition: fill 0.2s;
+}
+.itemSvg:hover {
+  fill: rgba(255, 99, 71, 0.4);
+}
+.itemSvg.selecionado {
+  fill: #ff6347;
+}
+.itemSvgStroke {
+  fill: #2c3e50;
+  pointer-events: none;
 }
 ```
 
@@ -90,31 +123,37 @@ path.selected {
 
 ## 📁 Dados Gerados
 
-O componente retorna uma lista com os `id`s das partes selecionadas, que pode ser salva no backend ou associada a um atendimento médico:
+O estado das partes selecionadas pode ser salvo ou enviado ao backend, por exemplo:
 
 ```ts
-['ombro-direito', 'peito', 'coxa-esquerda'];
+{
+  cabeca: { selecionado: true },
+  abdomen: { selecionado: false }
+}
+```
+
+Ou apenas os IDs selecionados:
+
+```ts
+['ombroDireito', 'peito', 'coxaEsquerda'];
 ```
 
 ---
 
-## 🩹 Uso no Contexto de Saúde
+## 🩹 Aplicações
 
-Este componente é ideal para:
-
-- Registros de **fichas de atendimento**
-- Marcação de **curativos e lesões**
-- Aplicações de **enfermagem**
-- Avaliações fisioterapêuticas e odontológicas
+- Fichas de atendimento
+- Marcação de curativos/lesões
+- Enfermagem, fisioterapia, odontologia
 
 ---
 
-## 🔧 Tecnologias Utilizadas
+## 🔧 Tecnologias
 
 - React + TypeScript
-- SVG Interativo
-- Estilização com CSS Modules
-- Vite + tsup (para empacotamento da lib)
+- SVG interativo
+- CSS Modules
+- Vite + tsup
 
 ---
 
