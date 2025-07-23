@@ -1,3 +1,5 @@
+import React from 'react';
+
 interface ICorpoHumanoFrenteProps {
   onClick: (event: any) => void;
   partesSelecionadas: any;
@@ -325,10 +327,11 @@ const CorpoHumanoFrente = (props: ICorpoHumanoFrenteProps) => {
       onClick={onClick}
       style={{ width: '100%', height: 'auto', maxWidth: '300px' }}
     >
-      {Object.keys(partesCorpoFrente).map((part: string, key: number) => {
+      {Object.keys(partesCorpoFrente).map((part: string, index: number) => {
         const selecionado = partesSelecionadas?.[part]?.selecionado ?? false;
         const habilitado = somenteVisualizar ? false : partesSelecionadas?.[part]?.habilitado ?? true;
-        return partesCorpoFrente?.[part](selecionado, habilitado, key);
+        const elemento = partesCorpoFrente?.[part](selecionado, habilitado, index);
+        return <React.Fragment key={part}>{elemento}</React.Fragment>;
       })}
     </svg>
   );
