@@ -26,8 +26,8 @@ export const partesCorpoCostas = {
   maoDireita: (selecionado: boolean, habilitado: boolean, key: number) => <path />,
   coxaEsquerda: (selecionado: boolean, habilitado: boolean, key: number) => <path />,
   coxaDireita: (selecionado: boolean, habilitado: boolean, key: number) => <path />,
-  pernaEsquerda: (selecionado: boolean, habilitado: boolean, key: number) => <path />,
-  pernaDireita: (selecionado: boolean, habilitado: boolean, key: number) => <path />,
+  panturrilhaEsquerda: (selecionado: boolean, habilitado: boolean, key: number) => <path />,
+  panturrilhaDireita: (selecionado: boolean, habilitado: boolean, key: number) => <path />,
   peDireito: (selecionado: boolean, habilitado: boolean, key: number) => <path />,
   peEsquerdo: (selecionado: boolean, habilitado: boolean, key: number) => <path />,
   silhueta: (selecionado: boolean, habilitado: boolean, key: number) => <path />,
@@ -242,25 +242,25 @@ const CorpoHumanoCostas = (props: ICorpoHumanoCostasProps) => {
         ></path>
       </g>
     ),
-    pernaEsquerda: (selecionado: boolean, habilitado: boolean, key: number) => (
+    panturrilhaEsquerda: (selecionado: boolean, habilitado: boolean, key: number) => (
       <g transform='translate(0, 297)'>
         <path
           d='m-68 0H42.5l-.137-.556c.032-.539.053-1.079.05-1.619l.002-.021-.002-.008.056-1.134c.147-3.551.177-7.107.131-10.661a261.319 261.319 0 0 0-.354-10.586c-.079-1.495-.171-2.99-.275-4.484-.049-.699-.104-1.398-.152-2.096-.023-.36-.023-.36-.043-.721a48.728 48.728 0 0 1-.037-3.586c.097-3.448.554-6.882 1.263-10.256a76.97 76.97 0 0 1 2.993-10.409 81.796 81.796 0 0 1 2.462-6.036c.123-.272.254-.544.373-.819.027-.065.049-.13.073-.195.166-.512.281-1.04.39-1.567.146-.708.273-1.42.394-2.133l.058-.375 3.39 1.153c4.428 1.344 8.969 2.315 13.547 2.979l2.08.255-.202.561c-.252.601-.53 1.203-.898 1.745a3.862 3.862 0 0 1-.28.37c-.09.104-.19.199-.28.304a4.522 4.522 0 0 0-.136.174 7.03 7.03 0 0 0-.681 1.223 16.98 16.98 0 0 0-.617 1.597c-.26.769-.482 1.549-.683 2.335-.198.77-.373 1.546-.529 2.326-.03.157.014.319.022.477.017.348.032.697.047 1.045.176 4.601.131 9.22-.379 13.8-.374 3.366-.997 6.722-2.057 9.942a33.286 33.286 0 0 1-2.294 5.369c-.222.419-.451.834-.673 1.254-.07.135-.138.271-.205.407a55.21 55.21 0 0 0-.792 1.85 97.47 97.47 0 0 0-1.122 2.88c-.948 2.552-1.802 5.139-2.498 7.771l-.057.134-.054.067a.495.495 0 0 1 .013.115c0 .068-.007.084-.022.15-.092.297-.185.593-.275.89-.395 1.331-.733 2.68-.938 4.055-.127.844-.212 1.202-.172 2.034z'
           className={`itemSvg ${selecionado ? 'selecionado' : ''} ${!habilitado ? 'noHover' : ''}`}
           onClick={onClick}
           style={{ cursor: !habilitado ? 'not-allowed' : 'pointer' }}
-          id='pernaEsquerda'
+          id='panturrilhaEsquerda'
           key={key}
         ></path>
       </g>
     ),
-    pernaDireita: (selecionado: boolean, habilitado: boolean, key: number) => (
+    panturrilhaDireita: (selecionado: boolean, habilitado: boolean, key: number) => (
       <path
         d='M121 297h-9.5l-.496-2.036a53.637 53.637 0 0 0-.624-3.72 83.262 83.262 0 0 0-.897-3.975l-.029-.114-.005-.027a67.105 67.105 0 0 0-.264-.977 98.078 98.078 0 0 0-1.874-5.869 158.202 158.202 0 0 0-2.15-5.738c-.304-.771-.614-1.539-.93-2.306-.232-.566-.474-1.127-.703-1.694-.08-.203-.159-.407-.235-.613-1.084-2.93-1.735-6.01-2.093-9.111a43.97 43.97 0 0 1-.259-3.264 21.078 21.078 0 0 1-.001-2.177c.024-.324.053-.647.077-.971.191-2.729.201-5.477-.087-8.2-.231-2.182-.654-4.357-1.429-6.415-.433-1.121-.876-2.238-1.312-3.359l-.925-2.49c2.157-.261 4.27-.594 6.373-.98a128.683 128.683 0 0 0 12.243-2.879l.083.588a39.117 39.117 0 0 0 1.711 6.26 64.65 64.65 0 0 0 1.21 3.056c.291.692.593 1.379.884 2.072.055.133.108.268.16.403.344.922.619 1.866.865 2.818.264 1.021.493 2.051.701 3.085.5 2.482.889 4.988 1.196 7.5.24 1.961.43 3.929.538 5.903.044.84.075 1.682.076 2.523a21.68 21.68 0 0 1-.088 2.207c-.02.212-.046.424-.079.635-.036.222-.081.444-.12.667-.037.228-.073.457-.107.687-.306 2.105-.508 4.225-.703 6.343l-.056.19-.039.052c.05.054.089.118.113.187.026.081.021.104.025.186-.047.931-.095 1.863-.144 2.793-.213 3.966-.445 7.93-.666 11.896-.054.978-.107 1.958-.157 2.937a167 167 0 0 0-.08 1.731c-.024.636-.036 1.27-.005 1.905L121 297z'
         className={`itemSvg ${selecionado ? 'selecionado' : ''} ${!habilitado ? 'noHover' : ''}`}
         onClick={onClick}
         style={{ cursor: !habilitado ? 'not-allowed' : 'pointer' }}
-        id='pernaDireita'
+        id='panturrilhaDireita'
         key={key}
       ></path>
     ),

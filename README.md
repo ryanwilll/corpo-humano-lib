@@ -87,10 +87,10 @@ const App = () => {
 Cada parte é um `<path id="parte-do-corpo" />` no SVG. IDs disponíveis incluem (exemplo):
 
 **Frente:**  
-`cabeca`, `olhos`, `orelhas`, `nariz`, `boca`, `pescoco`, `peito`, `ombroEsquerdo`, `ombroDireito`, `abdomen`, `antebracoDireito`, `antebracoEsquerdo`, `abdomenMedio`, `abdomenBaixo`, `maoDireita`, `maoEsquerda`, `orgaoReprodutor`, `coxaDireita`, `coxaEsquerda`, `joelhoDireito`, `joelhoEsquerdo`, `panturrilhaDireita`, `panturrilhaEsquerda`, `peDireito`, `peEsquerdo`
+`cabeca`, `olhos`, `orelhas`, `nariz`, `boca`, `pescoco`, `peito`, `ombroEsquerdo`, `ombroDireito`, `abdomen`, `antebracoDireito`, `antebracoEsquerdo`, `abdomenMedio`, `abdomenBaixo`, `maoDireita`, `maoEsquerda`, `orgaoReprodutor`, `coxaDireita`, `coxaEsquerda`, `joelhoDireito`, `joelhoEsquerdo`, `pernaDireita`, `pernaEsquerda`, `peDireito`, `peEsquerdo`
 
 **Costas:**  
-`cabeca`, `ouvidos`, `orelhas`, `pescoco`, `nuca`, `costas`, `ombroEsquerdo`, `ombroDireito`, `cutuveloEsquerdo`, `cutuveloDireito`, `costasInferior`, `antebracoEsquerdo`, `antebracoDireito`, `nadegas`, `anus`, `maoEsquerda`, `maoDireita`, `coxaEsquerda`, `coxaDireita`, `pernaEsquerda`, `pernaDireita`, `peEsquerdo`, `peDireito`
+`cabeca`, `ouvidos`, `orelhas`, `pescoco`, `nuca`, `costas`, `ombroEsquerdo`, `ombroDireito`, `cutuveloEsquerdo`, `cutuveloDireito`, `costasInferior`, `antebracoEsquerdo`, `antebracoDireito`, `nadegas`, `anus`, `maoEsquerda`, `maoDireita`, `coxaEsquerda`, `coxaDireita`, `panturrilhaEsquerda`, `panturrilhaDireita`, `peEsquerdo`, `peDireito`
 
 ---
 

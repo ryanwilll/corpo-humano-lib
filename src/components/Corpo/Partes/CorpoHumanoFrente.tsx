@@ -28,8 +28,8 @@ export const partesCorpoFrente = {
   coxaEsquerda: (selecionado: boolean, habilitado: boolean, key: number) => <path />,
   joelhoDireito: (selecionado: boolean, habilitado: boolean, key: number) => <path />,
   joelhoEsquerdo: (selecionado: boolean, habilitado: boolean, key: number) => <path />,
-  panturrilhaEsquerda: (selecionado: boolean, habilitado: boolean, key: number) => <path />,
-  panturrilhaDireita: (selecionado: boolean, habilitado: boolean, key: number) => <path />,
+  pernaEsquerda: (selecionado: boolean, habilitado: boolean, key: number) => <path />,
+  pernaDireita: (selecionado: boolean, habilitado: boolean, key: number) => <path />,
   peDireito: (selecionado: boolean, habilitado: boolean, key: number) => <path />,
   peEsquerdo: (selecionado: boolean, habilitado: boolean, key: number) => <path />,
   silhueta: (selecionado: boolean, habilitado: boolean, key: number) => <path />,
@@ -261,24 +261,24 @@ const CorpoHumanoFrente = (props: ICorpoHumanoFrenteProps) => {
         ></path>
       </g>
     ),
-    panturrilhaEsquerda: (selecionado: boolean, habilitado: boolean, key: number) => (
+    pernaEsquerda: (selecionado: boolean, habilitado: boolean, key: number) => (
       <path
         d='M125.812 290h-11.284l.075-1.128a18.807 18.807 0 0 0-.109-1.76 33.43 33.43 0 0 0-.354-2.461 51.08 51.08 0 0 0-.546-2.652 81.392 81.392 0 0 0-1.691-6.097c-.482-1.528-.985-3.049-1.606-4.527a39.735 39.735 0 0 0-1.24-2.654c-.469-.92-.966-1.827-1.447-2.741l-.283-.546a35.13 35.13 0 0 1-1.022-2.17 27.759 27.759 0 0 1-.991-2.723c-.518-1.696-.881-3.438-1.156-5.189-.329-2.094-.53-4.205-.678-6.318l.005-.114c.026-.168.049-.336.071-.506.03-.229.03-.229.057-.458.225-2.01.314-4.04.177-6.059a21.143 21.143 0 0 0-.293-2.394 13.803 13.803 0 0 0-.484-1.902l-.468-1.158.79-.019a63.63 63.63 0 0 0 4.634-.397 48.74 48.74 0 0 0 4.665-.793 32.115 32.115 0 0 0 3.918-1.12c.39-.141.777-.292 1.159-.454.732-.31 1.451-.661 2.097-1.07l.22.488c.222.469.45.937.671 1.408a44.91 44.91 0 0 1 1.359 3.175c.454 1.189.85 2.399 1.191 3.625.901 3.234 1.424 6.567 1.685 9.911.272 3.483.261 6.985.06 10.472a103.37 103.37 0 0 1-.257 3.425c0 .807.002 1.615.006 2.424.024 4.374.082 8.75.246 13.122.06 1.586.134 3.173.246 4.756.046.656.1 1.311.166 1.966.06.602.134 1.203.24 1.8l.171.838z'
         className={`itemSvg ${selecionado ? 'selecionado' : ''} ${!habilitado ? 'noHover' : ''}`}
         onClick={onClick}
         style={{ cursor: !habilitado ? 'not-allowed' : 'pointer' }}
-        id='panturrilhaEsquerda'
+        id='pernaEsquerda'
         key={key}
       />
     ),
-    panturrilhaDireita: (selecionado: boolean, habilitado: boolean, key: number) => (
+    pernaDireita: (selecionado: boolean, habilitado: boolean, key: number) => (
       <path
         transform='translate(0, 290)'
         d='m66.764 0H47.972l.038-.185c.021-.119.041-.239.058-.359.092-.694.13-1.393.15-2.092.019-.617.022-1.236.015-1.854a115.45 115.45 0 0 0-.206-5.39 241.084 241.084 0 0 0-.501-6.738c-.223-2.576-.477-5.15-.757-7.72l-.025-.229c-.411-4.537-.637-9.1-.456-13.655a62.65 62.65 0 0 1 .427-5.335c.214-1.704.509-3.399.916-5.067a34.865 34.865 0 0 1 1.874-5.594c.196-.461.399-.918.594-1.378l.189-.466 2.523 1.372c1.089.486 2.218.881 3.364 1.208 1.337.382 2.7.67 4.072.891 2.637.425 5.31.604 7.956.604l-.378 2.403a36.487 36.487 0 0 0-.183 2.881 44.62 44.62 0 0 0 .127 4.706l.002.059c-.072 2.704-.185 5.409-.451 8.102a49.904 49.904 0 0 1-.418 3.249 27.916 27.916 0 0 1-.755 3.371c-.269.905-.602 1.79-.99 2.651-.465 1.032-1.003 2.03-1.511 3.042l-.258.523a38.13 38.13 0 0 0-1.071 2.422c-.332.834-.63 1.68-.908 2.533-.22.676-.428 1.357-.623 2.041a50.528 50.528 0 0 0-1.54 7.373 35.57 35.57 0 0 0-.314 4.623c.002.537.019 1.074.061 1.61l.055.398z'
         className={`itemSvg ${selecionado ? 'selecionado' : ''} ${!habilitado ? 'noHover' : ''}`}
         onClick={onClick}
         style={{ cursor: !habilitado ? 'not-allowed' : 'pointer' }}
-        id='panturrilhaDireita'
+        id='pernaDireita'
         key={key}
       ></path>
     ),
